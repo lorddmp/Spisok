@@ -1,17 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "spisok.h"
 
 #define SIZE_DATA 30
-struct str_spisok{
-    int* data;
-    int* next;
-    int* prev;
-    int head;
-    int tail;
-    int free;
-};
-
-void Vstavka(str_spisok* spisok, int index, int value);
 
 int main()
 {
@@ -45,6 +36,8 @@ int main()
         spisok.prev[i] = -1;
     }
 
+    for (int i = 1; i != 0; i = spisok.next[i])
+        printf("%d ", spisok.data[i]);
 
     return 0;
 }
@@ -56,7 +49,4 @@ void Vstavka(str_spisok* spisok, int index, int value)
     spisok->next[spisok->free] = spisok->next[index];
     spisok->next[index] = spisok->free;
 
-
-
-    int temp_prev = spisok->prev[index];
 }
