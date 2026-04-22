@@ -1,0 +1,17 @@
+Digraph G{
+rankdir = LR;
+splines = curved;
+node0 [shape = record, color = black, label="0 | <f2> 0| {<f0> 3| <f1> 2}"];
+node1 [shape = record, color = black, label="40 | <f2> 1| {<f0> 2| <f1> 3}"];
+node2 [shape = record, color = black, label="30 | <f2> 2| {<f0> 0| <f1> 1}"];
+node3 [shape = record, color = black, label="30 | <f2> 3| {<f0> 1| <f1> 0}"];
+node0:<f2>->node1:<f2>[color = blue];
+node1:<f2>->node2:<f2>[color = blue];
+node2:<f2>->node3:<f2>[color = blue];
+node3:<f0>->node1:<f0>[color = green];
+node1:<f0>->node2:<f0>[color = green];
+node2:<f0>->node0:<f0>[color = green];
+node2:<f1>->node1:<f1>[color = red];
+node1:<f1>->node3:<f1>[color = red];
+node3:<f1>->node0:<f1>[color = red];
+}

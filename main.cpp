@@ -12,32 +12,34 @@ do                                          \
 
 int main()
 {
-    str_spisok spisok = Init_Spisok();
-    IF_ERROR_CALLOC(spisok.data);
-    IF_ERROR_CALLOC(spisok.next);
-    IF_ERROR_CALLOC(spisok.prev);
+    str_spisok spisok;
+    Init_Spisok(&spisok);
 
-    for (int i = 1; i < SIZE_DATA - 1; i++)
-        spisok.next[i] = i + 1;
+    // Write_Spisok(spisok);
+    // Data_Vstavka(&spisok, 0, 40);
+    // Write_Spisok(spisok);
+    // Data_Vstavka(&spisok, 0, 10);
+    // Write_Spisok(spisok);
+    // List_Delete(&spisok, 2);
+    // Write_Spisok(spisok);
+    // Data_Vstavka(&spisok, 1, 30);
+    // Write_Spisok(spisok);
+    // Data_Vstavka(&spisok, 0, 30);
+    // Write_Spisok(spisok);
 
-    for (int i = 2; i < SIZE_DATA - 1; i++)
-        spisok.prev[i] = -1;
+    Write_Spisok(spisok);
+    List_Vstavka(&spisok, 0, 40);
+    Write_Spisok(spisok);
+    List_Vstavka(&spisok, 0, 10);
+    Write_Spisok(spisok);
+    List_Delete(&spisok, 2);
+    Write_Spisok(spisok);
+    List_Vstavka(&spisok, 1, 30);
+    Write_Spisok(spisok);
+    List_Vstavka(&spisok, 0, 30);
+    Write_Spisok(spisok);
 
-    Print_Spisok(spisok);
-    LVstavka(&spisok, 0, 40);
-    Print_Spisok(spisok);
-    LVstavka(&spisok, 0, 10);
-    Print_Spisok(spisok);
-    LDelete(&spisok, 2);
-    Print_Spisok(spisok);
-    LVstavka(&spisok, 2, 30);
-    Print_Spisok(spisok);
-    LVstavka(&spisok, 0, 30);
-    Print_Spisok(spisok);
-
-    free(spisok.data);
-    free(spisok.next);
-    free(spisok.prev);
+    List_Destructor(spisok);
 
     return 0;
 }
