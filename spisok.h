@@ -16,8 +16,12 @@ struct str_spisok{
     int size;
 };
 
-void Vstavka(str_spisok* spisok, int index, int value);
+str_spisok Init_Spisok(void);
 
-void Delete(str_spisok* spisok, int index);
+void LVstavka(str_spisok* spisok, int index, int value);
+
+void LDelete(str_spisok* spisok, int index);
+
+void Print_Spisok(str_spisok spisok);
 
 #endif
